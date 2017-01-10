@@ -3,10 +3,7 @@ using System.Collections;
 
 public class MoveByInput : MonoBehaviour {   
 
-    Rigidbody2D body;
-
-    public GameObject gsbtn;
-   
+    Rigidbody2D body;     
 
     public float max_speed = 1f;
     public float speed = 0.1f;
@@ -74,7 +71,8 @@ public class MoveByInput : MonoBehaviour {
 
             Destroy(collision.gameObject);
             Destroy(gameObject);
-            gsbtn.GetComponent<GSM>().GameOver();
+            
+           
         }
     }
     

@@ -6,11 +6,15 @@ public class GSM : MonoBehaviour
 {
 
     public GameObject player;
-    public GameObject gsbtn;
+    public GameObject enemy;
+    private GameObject genedplayer;
+
+    public Button btn;
+    public Text btntext;
     public Text title;
 
     private int state = 0;
-
+    private int preState = 0;
     // Use this for initialization
     void Start()
     {
@@ -21,26 +25,45 @@ public class GSM : MonoBehaviour
     void Update()
     {
 
+        if (genedplayer ==null && state == 1) {
+            state = 2;
+        }
+
+        if (preState != state)
+        {
+            switch (state)
+            {
+                case 0:
+                    title.text = "tracing game";
+                    btntext.text= "Start";
+                    btn.gameObject.SetActive(true); break;
+                case 1:
+                    title.text = "level 1";
+                    btn.gameObject.SetActive(false); break;
+                case 2:
+                    btn.gameObject.SetActive(true);
+                    btntext.text = "play again";
+                    title.text = "Game over";
+                    break;
+            }
+
+            preState = state;
+        }
     }
 
-    public void buttonClicked() {
-
-        StartLevel();
-         
-
+    public void setState(int state) {
+        this.state = state;
     }
 
-    public void GameOver()
-    {
-        gsbtn.SetActive(true);
-        gsbtn.GetComponent<Text>().text = "Play Again";
-        title.text = "Game Over";
+    public void genPlayer() {
+        genedplayer = (GameObject)Instantiate(player,Vector3.zero,Quaternion.identity);
     }
-    public void StartLevel()
-    {
-        Instantiate(player, Vector3.zero, Quaternion.identity);
-        title.text = "Level 1";
-        gsbtn.SetActive(false);
-      
+
+    public void genEnemy() {
+        Instantiate(enemy, new Vector3(0,2),Quaternion.identity);
     }
+
 }
+
+    
+
