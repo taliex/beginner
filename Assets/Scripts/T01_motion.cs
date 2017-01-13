@@ -42,7 +42,7 @@ public class T01_motion : MonoBehaviour {
             }
             else
             {
-
+               body.velocity = body.velocity.normalized * max_speed;
             }
         }
 
@@ -51,13 +51,17 @@ public class T01_motion : MonoBehaviour {
             if (Vector3.Dot(body.velocity, transform.up) > 0)
             {
                 body.AddForce(transform.up * speed * -1);
+                if (body.angularVelocity > 0.1) { body.AddTorque(-rpu); }
+                if (body.angularVelocity < -0.1) { body.AddTorque(rpu); }
             }
             else
             {
                 body.velocity = Vector2.zero;
+                body.angularVelocity = 0;
             }
+            
         }
-
+            
         if (Input.GetKey(KeyCode.D))
         {
 
@@ -74,7 +78,7 @@ public class T01_motion : MonoBehaviour {
     }
 
     void Update() {
-        ani.SetFloat("anglarspeed", body.angularVelocity);
-        ani.SetFloat("linspeed", body.velocity.magnitude);
+        ani.SetFloat("anglarspeed", body.angularVelocity/100);
+        ani.SetFloat("linspeed", body.velocity.magnitude/5);
     }
 }
