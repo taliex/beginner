@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 35b5bb2a618708b4689adb52911e5c59
-timeCreated: 1484139481
+timeCreated: 1484319669
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -237,8 +237,8 @@ TextureImporter:
         y: 16
         width: 5
         height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
     - name: T-01_13
@@ -303,8 +303,8 @@ TextureImporter:
         y: 16
         width: 3
         height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
     outline: []

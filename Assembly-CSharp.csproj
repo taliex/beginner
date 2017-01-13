@@ -47,7 +47,8 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\GSM.cs" />
      <Compile Include="Assets\Scripts\MoveByInput.cs" />
-     <Compile Include="Assets\T01_motion.cs" />
+     <Compile Include="Assets\Scripts\T01_motion.cs" />
+     <Compile Include="Assets\Scripts\bullet_1.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
